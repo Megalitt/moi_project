@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "block-no-empty": null,
+    "comment-no-empty": null,
+    "comment-whitespace-inside": null,
+    "comment-empty-line-before": null,
+    "function-calc-no-unspaced-operator": null,
+    "custom-property-empty-line-before": null,
+    "selector-class-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-descending-specificity":null,
+    "color-hex-length":null
+  }
+}
