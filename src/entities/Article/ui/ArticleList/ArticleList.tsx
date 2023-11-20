@@ -32,7 +32,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     )
   };
 
-
   const renderArticle = (article: Article) => (
     <ArticleListItem 
       article={article} 

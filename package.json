@@ -93,6 +93,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-redux": "^7.1.27",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-virtualized": "^9.21.27",
     "axios": "^1.5.1",
     "babel-plugin-add-module-exports": "^1.0.4",
     "babel-plugin-transform-react-jsx-self": "^6.22.0",
