@@ -8,26 +8,23 @@
   margin-top: auto;
 }
 
-.data {
-}
-
-.input {
-  margin-top: 10px;
-}
+// .input {
+//   margin-top: 10px;
+// }
 
 .loading,
 .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   height: 200px;
 }
 
-.avatarWrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
+// .avatarWrapper {
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+// }
 
 .editing {
   border: 2px solid var(--inverted-primary-color);

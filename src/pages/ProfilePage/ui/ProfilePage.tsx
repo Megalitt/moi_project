@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 interface ProfilePageProps {
   className?: string;
@@ -88,7 +89,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
       removeAfterUnmount
     >
       <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader/>
+        <VStack max gap='16'>
+          <ProfilePageHeader/>
         {validateError?.length && validateError.map((err: any) => (
           <Text
             theme={TextTheme.ERROR}
@@ -110,6 +112,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
+        </VStack>
+        
       </Page>
     </DynamicModuleLoader>
     

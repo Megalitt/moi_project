@@ -1,21 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './HStack.module.scss';
-import { memo } from 'react';
+
+import { Flex, FlexProps } from '../Flex/Flex';
 
 
-interface HStackProps {
-  className?: string;
-}
+type HStackProps = Omit<FlexProps, 'direction'>
 
-export const HStack = memo((props: HStackProps) => {
-  const {
-    className,
-  } = props;
-
+export const HStack = (props: HStackProps) => {
   return (
-    <div className={classNames(cls.HStack, {}, [className])}>
-      
-    </div>
+    <Flex direction='row' {...props}/>
   );
-});
+};
 

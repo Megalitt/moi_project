@@ -28,8 +28,7 @@
 
 .items {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  margin-left: 30px;
 }
 
 .link {
@@ -37,12 +36,12 @@
   opacity: 1;
 }
 
-.item {
-  margin-top: 10px;
-  margin-left: 25px;
-  display: flex;
-  align-items: center;
-}
+// .item {
+//   margin-top: 10px;
+//   margin-left: 25px;
+//   display: flex;
+//   align-items: center;
+// }
 
 .icon {
   fill: var(--inverted-primary-color);
