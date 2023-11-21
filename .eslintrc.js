@@ -70,7 +70,8 @@ module.exports = {
             "@typescript-eslint/no-explicit-any": "off",
             "prefer-const": "off",
             "@typescript-eslint/ban-ts-comment": "off",
-            "no-debugger": "off"
+            "no-debugger": "off",
+            "react/jsx-key":"off"
             
     }
 }

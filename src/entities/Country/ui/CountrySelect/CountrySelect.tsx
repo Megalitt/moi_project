@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Select } from 'shared/ui/Select/Select';
 import { Country } from 'entities/Country/model/types/country';
 import { memo, useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
   className?: string;
@@ -24,13 +25,25 @@ export const CountrySelect = memo(({className, value, onChange, readonly}: Count
   }, [onChange]);
 
   return (
-    <Select 
-      className={classNames('', {}, [className])}
-      label={'Укажите страну'}
-      options={options}
-      value={value}
-      onChange={onChangeHandler}
-      readonly={readonly}
+    <ListBox
+        onChange={onChangeHandler}
+        value={value}
+        defaultValue='Укажите страну'
+        label='Укажите страну'
+        items={options}
+        readonly={readonly}
+        direction="top right"
     />
-  );
+);
+
+  // return (
+  //   <Select 
+  //     className={classNames('', {}, [className])}
+  //     label={'Укажите страну'}
+  //     options={options}
+  //     value={value}
+  //     onChange={onChangeHandler}
+  //     readonly={readonly}
+  //   />
+  // );
 });
