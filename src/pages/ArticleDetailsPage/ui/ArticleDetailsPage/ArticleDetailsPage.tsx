@@ -7,16 +7,14 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsCommentReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentByArticleid } from 'pages/ArticleDetailsPage/model/services/fetchCommentByArticleid/fetchCommentByArticleid';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { RoutePatch } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { getArticleRecomendations } from 'pages/ArticleDetailsPage/model/slice/articleDetailsPageRecomendationSlice';
 import { getArticleRecomendationIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recomendation';
@@ -54,10 +52,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     dispatch(fetchArticleRecomendations());
   });
 
-  // const onBackToList = useCallback(() => {
-  //   navigate(RoutePatch.article)
-  // }, [])
-  
+
   if(!id) {
     return (
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -70,7 +65,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader/>
         <ArticleDetails id={id}/>
-        <Text 
+        {/* <Text 
           size={TextSize.L} 
           className={cls.comentTitle} 
           title={t('Рекоменуем')}
@@ -80,7 +75,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
           isLoading={recomendationsIsLoadig}
           className={cls.recommendations}
           target="_blank"
-        />
+        /> */}
         <Text 
           size={TextSize.L} 
           className={cls.comentTitle} 

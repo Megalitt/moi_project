@@ -38,53 +38,53 @@ export const Navbar = memo(({className}: NavbarProps) => {
 
   if (authData) {
     return (
-        <header className={classNames(cls.Navbar, {}, [className])}>
-            <Text
-              className={cls.appName}
-              title={t('Ulbi TV App')}
-              theme={TextTheme.PRIMARY}
-            />
-            <AppLink
-              to={RoutePatch.article_create}
-              theme={AppLinkTheme.SECONDARY}
-              className={cls.createBtn}
-          >
-              {t('Создать статью')}
-            </AppLink>
-            <Dropdown
-              direction="bottom left"
-              className={cls.dropdown}
-              items={[
-                  {
-                      content: t('Профиль'),
-                      href: RoutePatch.profile + authData.id,
-                  },
-                  {
-                      content: t('Выйти'),
-                      onClick: onLogout,
-                  },
-              ]}
-              trigger={<Avatar size={30} src={authData.avatar} />}
-            />
-        </header>
+      <header className={classNames(cls.Navbar, {}, [className])}>
+        <Text
+          className={cls.appName}
+          title={t('Ulbi TV App')}
+          theme={TextTheme.PRIMARY}
+        />
+        <AppLink
+          to={RoutePatch.article_create}
+          theme={AppLinkTheme.SECONDARY}
+          className={cls.createBtn}
+      >
+          {t('Создать статью')}
+        </AppLink>
+        <Dropdown
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+              {
+                  content: t('Профиль'),
+                  href: RoutePatch.profile + authData.id,
+              },
+              {
+                  content: t('Выйти'),
+                  onClick: onLogout,
+              },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
+      </header>
     );
 }
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-       <Button
-                theme={ThemeButton.CLEAR_INVERTED}
-                className={cls.links}
-                onClick={onShowModal}
-            >
-                {t('Войти')}
-            </Button>
-            {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onToggleModal}
-                />
-            )}
+      <Button
+        theme={ThemeButton.CLEAR_INVERTED}
+        className={cls.links}
+        onClick={onShowModal}
+      >
+        {t('Войти')}
+      </Button>
+      {isAuthModal && (
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={onToggleModal}
+        />
+      )}
     </header>
   );
 });
