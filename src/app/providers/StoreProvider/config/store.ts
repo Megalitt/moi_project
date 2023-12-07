@@ -8,6 +8,7 @@ import { $api } from 'shared/api/api';
 import {CombinedState, Reducer} from '@reduxjs/toolkit';
 import { NavigateOptions, To } from 'react-router-dom';
 import { uiReducer } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -19,6 +20,7 @@ export function createReduxStore(
     counter: counterReducer,
     user: userReducer,
     ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
     // loginForm: loginReducer, не обязательный
   }
 
@@ -35,7 +37,7 @@ const reducerManager = createReducerManager(rootReducers);
           navigate,
         },
       },
-    })
+    }).concat(rtkApi.middleware)
   })
   //@ts-ignore
   store.reducerManager = reducerManager
